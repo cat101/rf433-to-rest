@@ -1,7 +1,9 @@
 # Why do you need a RF to REST bridge?
-I wrote this REST frontend in order to integrate readily available & cheap wireless sensors to building automation software like OpenHab.
+I wrote this REST frontend in order to integrate readily available & cheap wireless sensors to building automation software like [OpenHab](https://www.openhab.org/).
 
-At its core this frontend runs an rcswitch based sniffer on a Raspberry Pi and provides a webhook mechanism to notify other REST services when a code is decoded.
+At its core this frontend runs an [rcswitch](https://github.com/sui77/rc-switch) based sniffer on a Raspberry Pi which provides a webhook mechanism to notify other REST services when a code is decoded.
+
+The advantage of providing REST webhooks is that you can have several RPis receiving RF signals and reporting back to a central house automation platform. 
 
 
 # About the hardware setup
@@ -16,7 +18,7 @@ Here is a picture of the sensors I have tested successfully. All of them operate
 <img src="images/sample%20remotes.jpg" width="50%">
 
 # About the software setup
-The server is written in NodeJS and uses restify to handle the HTTP connections. The webhook API leverages node-webhooks. In order to install the server just clone the repository and do `npn install`. As part of the installation npn will clone the rcswitch repository and make a native RFSniffer. RFSniffer requires git, build-essential and WiringPi to be installed on the Raspberry Pi.
+The server is written in NodeJS and uses restify to handle the HTTP connections. The webhook API leverages [node-webhooks](https://github.com/roccomuso/node-webhooks). In order to install the server just clone the repository and do `npn install`. As part of the installation npn will clone the rcswitch repository and make a native RFSniffer (based [433Utils](https://github.com/ninjablocks/433Utils)). RFSniffer requires git, build-essential and WiringPi to be installed on the Raspberry Pi.
 
 # Using the REST bridge
 
