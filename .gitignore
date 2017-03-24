@@ -1,0 +1,6 @@
+*.git
+*.hg
+.DS_STORE
+.DS_Store
+_delete/
+*.sublime-*

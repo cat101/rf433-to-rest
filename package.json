@@ -1,0 +1,21 @@
+{
+  "name": "rf433-to-rest",
+  "version": "1.0.0",
+  "description": "A REST frontend to expose wireless sensors that can be decoded by rcswitch",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "install": "napa git://github.com/cat101/rc-switch",
+    "postinstall":"make"   
+  },
+  "dependencies": {
+    "bunyan-winston-adapter": "^0.2.0",
+    "node-webhooks": "^1.1.32",
+    "restify": "^4.3.0",
+    "restify-errors": "^4.3.0",
+    "winston": "^2.3.0"
+  },
+  "devDependencies": {
+    "napa": "^2.3.0"
+  }
+}
