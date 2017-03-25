@@ -18,7 +18,9 @@ Here is a picture of the sensors I have tested successfully. All of them operate
 <img src="images/sample%20remotes.jpg" width="50%">
 
 # About the software setup
-The server is written in NodeJS and uses restify to handle the HTTP connections. The webhook API leverages [node-webhooks](https://github.com/roccomuso/node-webhooks). In order to install the server just clone the repository and do `npn install`. As part of the installation npn will clone the rcswitch repository and make a native RFSniffer (based [433Utils](https://github.com/ninjablocks/433Utils)). RFSniffer requires git, build-essential and WiringPi to be installed on the Raspberry Pi.
+The server is written in NodeJS and uses restify to handle HTTP connections. The webhook API leverages [node-webhooks](https://github.com/roccomuso/node-webhooks). In order to install the server clone this repository and do `npn install`. As part of the installation npn will clone the rcswitch repository and build a native RFSniffer (based [433Utils](https://github.com/ninjablocks/433Utils)). RFSniffer requires git, build-essential and WiringPi to be installed on the Raspberry Pi.
+
+For starter just launch the server doing `node index.js`. You should see an eventcode on the console every time you press a button on your RF device. I encourage you to look at `config.js` and `rf433-app.conf`for additional setup details. This later file can then be copied to `/etc/init` to register the server with the OS upstart service.
 
 # Using the REST bridge
 
