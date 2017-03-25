@@ -44,3 +44,10 @@ If the registration is successful, when an RF code is received you will get a ca
 }
 ```
 
+The following example shows how to register two callbacks into OpenHab to turn a light ON or OFF depending on what buttom is pressed
+
+```bash
+$ curl 'http://raspi-living:8000/api/webhook/add/0x0012C342' -H 'Content-Type: application/json' --data-binary '{"url":"http://raspi-ss:8080/CMD?SS_S02_G=OFF"}'
+
+$ curl 'http://raspi-living:8000/api/webhook/add/0x0012C344' -H 'Content-Type: application/json' --data-binary '{"url":"http://raspi-ss:8080/CMD?SS_S02_G=ON"}'
+```
