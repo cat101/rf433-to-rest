@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <time.h>
 #include <ctype.h>
 #include <wiringPi.h>
 
@@ -60,6 +61,9 @@ int main(int argc, char *argv[]) {
   pullUpDnControl (PIN, PUD_OFF); // Disable internal pull downs
   mySwitch.enableReceive(PIN);  // Receiver on interrupt 0 => that is pin #2
   // unsigned long arduinocodeLast;
+  struct timespec tim, tim2;
+  tim.tv_sec = 0;
+  tim.tv_nsec = 100L * 1000L * 1000L; //100ms
 
   while(1) {  
     if (mySwitch.available()) {
@@ -90,6 +94,7 @@ int main(int argc, char *argv[]) {
       }
       mySwitch.resetAvailable();
     }
+    nanosleep(&tim , &tim2); //Sleep 
   }
   exit(0);
 }

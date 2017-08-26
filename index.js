@@ -1,8 +1,10 @@
 'use strict'
 // rsync -rvi --existing --exclude 'node_modules' --exclude 'modules' --progress -e ssh /Users/fmcuenca/Documents/mov/CasaC/src/Apps/CasaC/rf433-to-rest/ root@raspi-living:/mybin/CasaC/rf433-to-rest/
-// git://github.com/cat101/rc-switch
+// rsync -rvi --existing --exclude 'node_modules' --exclude 'modules' --progress -e ssh /Users/fmcuenca/Documents/mov/CasaC/src/Apps/CasaC/rf433-to-rest/ root@raspi-pa:/mybin/CasaC/rf433-to-rest/
+// git clone -b patch-1 https://github.com/cat101/rc-switch
 // git://github.com/sui77/rc-switch
 // http://wiringpi.com/download-and-install/
+// restart rf433-app
 
 /**
  * Module Dependencies

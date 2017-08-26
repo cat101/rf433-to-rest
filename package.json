@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "start": "node index.js",
-    "install": "napa git://github.com/cat101/rc-switch",
+    "install": "napa cat101/rc-switch",
     "postinstall":"make"   
   },
   "dependencies": {
