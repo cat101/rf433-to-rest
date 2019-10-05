@@ -4,3 +4,4 @@
 .DS_Store
 _delete/
 *.sublime-*
+_private/
